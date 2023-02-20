@@ -1,0 +1,8 @@
+version: "3.8"
+
+services:
+  test_website:
+    container_name: Min-REST-API
+    ports:
+      - "8001:8001"
+    build: "https://github.com/sovheiv/Min-REST-API.git#main:"

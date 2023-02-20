@@ -1,0 +1,17 @@
+[Unit]
+Description=Min-REST-API
+Requires=docker.service
+After=docker.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/ubuntu/programs/Min-REST-API
+Environment=COMPOSE_HTTP_TIMEOUT=3600
+ExecStart=/usr/bin/env /usr/bin/docker-compose -f /home/ubuntu/programs/Min-REST-API/docker-compose.yaml up --build
+ExecStop=/usr/bin/env /usr/bin/docker-compose -f /home/ubuntu/programs/Min-REST-API/docker-compose.yaml stop
+StandardOutput=syslog
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+
