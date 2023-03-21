@@ -5,6 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
+    print(f"index: {request.remote_addr}")
     return {"success": True, "msg": "message"}
 
 
