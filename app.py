@@ -9,7 +9,7 @@ def index():
     return {"success": True, "msg": "message"}
 
 
-@app.route("/get_ip")
+@app.route("/ip")
 def get_ip():
     return {"ip": request.remote_addr}
 
